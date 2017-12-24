@@ -62,14 +62,16 @@ class Bot
     private $apiEndpoint = 'https://api.telegram.org/bot<token>/';
     private $httpClient;
     private $me;
+    private $ignoreErrors;
 
     /**
      * Bot constructor.
      * @param $token
      * @throws Exception
      */
-    public function __construct($token)
+    public function __construct($token, $ignoreErrors = false)
     {
+        $this->ignoreErrors = $ignoreErrors;
         $this->apiEndpoint = str_replace('<token>', $token, $this->apiEndpoint);
         $this->httpClient = new Client([
             'base_uri' => $this->apiEndpoint,
@@ -95,7 +97,7 @@ class Bot
         if ($async) {
             $name = substr($name, 0, strlen($name) - 5);
         }
-        $ignoreErrors = isset($arguments['ignoreErrors']) ? $arguments['ignoreErrors'] : true;
+        $ignoreErrors = isset($arguments['ignoreErrors']) ? $arguments['ignoreErrors'] : $this->ignoreErrors;
         try {
             return $this->request($name, $arguments, $async);
         } catch (Exception $e) {
