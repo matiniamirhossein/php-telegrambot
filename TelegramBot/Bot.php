@@ -119,7 +119,6 @@ class Bot
         $options = [];
         if (sizeof($args)) {
             $options['multipart'] = [];
-            $multipart = ['audio', 'photo', 'video', 'document', 'voice', 'video_note', 'sticker', 'png_sticker', 'certificate'];
             foreach ($args as $key => $arg) {
                 if (is_array($arg)) {
                     $arg = \json_encode($arg);
