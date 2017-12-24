@@ -1,0 +1,21 @@
+{
+  "name": "matiniamirhossein/php-telegrambot",
+  "description": "Easy to use PHP Telegram bot client.",
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Amirhossein Matini",
+      "email": "matiniamirhossein@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.5",
+    "guzzlehttp/guzzle": "^6.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "TelegramBot\\": "TelegramBot"
+    }
+  }
+}
