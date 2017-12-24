@@ -3,7 +3,6 @@ namespace TelegramBot;
 use Exception;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
-use Modules\AnonymousChat\StaticKeeper;
 use TelegramBot\Exception\TelegramBotException;
 use function array_key_exists;
 use function in_array;
