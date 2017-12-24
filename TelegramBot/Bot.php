@@ -75,7 +75,7 @@ class Bot
         $this->apiEndpoint = str_replace('<token>', $token, $this->apiEndpoint);
         $this->httpClient = new Client([
             'base_uri' => $this->apiEndpoint,
-            'verify' => dirname(__DIR__) . '/schema/cacert.pem',
+            'verify' => dirname(dirname(__DIR__)) . '/schema/cacert.pem',
             'http_errors' => false,
         ]);
         try {
